@@ -3,6 +3,7 @@
 #include <chrono>
 #include <ctime>
 #include <experimental/source_location>
+#include <iostream>
 
 std::string Logger::CurrentDate() {
   std::time_t now =
@@ -15,12 +16,12 @@ std::string Logger::CurrentDate() {
   return output;
 }
 
-void Logger::Log(const std::string_view message) {
+void Logger::Log(const std::experimental::string_view message) {
   std::cout << GREEN << "LOG: " << CurrentDate() << " - " << message << RESET
             << "\n";
 }
 
-void Logger::Error(const std::string_view message,
+void Logger::Error(const std::experimental::string_view message,
                    std::experimental::source_location location) {
   std::cout << RED << "ERROR: " << CurrentDate() << " - " << message
             << "FILE: " << location.file_name()

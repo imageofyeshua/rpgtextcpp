@@ -1,13 +1,14 @@
 #include "Game.h"
+#include "Logger.h"
 #include <iostream>
 
 bool Game::Init() { return true; }
 
-void Game::ProcessInputs() { std::cout << "Process Inputs\n"; }
+void Game::ProcessInputs() { TRPG_LOG("Process Inputs"); }
 
-void Game::Update() { std::cout << "Update\n"; }
+void Game::Update() { TRPG_ERROR("Update"); }
 
-void Game::Draw() { std::cout << "Draw\n"; }
+void Game::Draw() { TRPG_LOG("Draw"); }
 
 Game::Game() : m_bIsRunning(true) {}
 
